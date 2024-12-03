@@ -3,7 +3,7 @@ from collections import Counter
 
 
 # Part 1 solution, O(nlogn)
-def solution_part1(list1: List, list2: List):
+def solution_part1(list1: List, list2: List) -> int:
     list1.sort()
     list2.sort()
     result = 0
@@ -15,7 +15,7 @@ def solution_part1(list1: List, list2: List):
 
 
 # Part 2 solution, O(n)
-def solution_part2(list1: List, list2: List):
+def solution_part2(list1: List, list2: List) -> int:
     count_list1 = Counter(list1)  # O(n)
     count_list2 = Counter(list2)  # O(n)
     result = 0

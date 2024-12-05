@@ -5,15 +5,15 @@ def solution_part1(page_order_rules: Dict[int, int], updates: List[List[int]]) -
     correct = []
     for update in updates:
         correct_order = True
-        row_order_map = {}
-        for i, num in enumerate(update):
-            row_order_map[num] = i
+        row_order_map = set()
+        for start_num in update:
+            row_order_map.add(start_num)
 
-            if not num in page_order_rules:
+            if not start_num in page_order_rules:
                 continue
 
-            for after_num in page_order_rules[num]:
-                if after_num in row_order_map:
+            for end_num in page_order_rules[start_num]:
+                if end_num in row_order_map:
                     correct_order = False
                     break
 
